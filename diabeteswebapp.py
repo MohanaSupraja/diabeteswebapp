@@ -8,7 +8,7 @@ Created on Sun Sep 25 18:41:52 2022
 import numpy as np
 import pickle
 import streamlit as st
-loaded_model=pickle.load(open('diabetes','rb'))
+loaded_model=pickle.load(open('diabetes.sav','rb'))
 #creating a function for prediction
 def diabetes_prediction(input_data):
     

@@ -8,7 +8,7 @@ Created on Sun Sep 25 18:41:52 2022
 import numpy as np
 import pickle
 import streamlit as st
-diabetesmod=pickle.load(open('C:\\Users\\supra\\OneDrive\\Desktop\\project\\sav files\\diabetesmod.sav','rb'))
+diabetesmod=pickle.load(open('diabetesmod.sav','rb'))
 #creating a function for prediction
 def diabetes_prediction(input_data):
     

@@ -8,7 +8,7 @@ Created on Sun Sep 25 18:41:52 2022
 import numpy as np
 import pickle
 import streamlit as st
-loaded_model=pickle.load(open('C:\\Users\\supra\\OneDrive\\Desktop\\project\\sav files\\diabetesmod.sav','rb'))
+diabetesmod=pickle.load(open('diabetesmod.sav','rb'))
 #creating a function for prediction
 def diabetes_prediction(input_data):
     
@@ -19,7 +19,7 @@ def diabetes_prediction(input_data):
     # reshape the array as we are predicting for one instance
     input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
 
-    prediction = loaded_model.predict(input_data_reshaped)
+    prediction = diabetesmod.predict(input_data_reshaped)
     print(prediction)
 
     if (prediction[0] == 0):
@@ -57,7 +57,7 @@ def main():
     if st.button('Diabetes Test Result'):
         #diagnosis = diabetes_prediction([Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age])
        #or
-        diagnosis = loaded_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+        diagnosis = diabetesmod.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
 
         
     st.success(diagnosis)
